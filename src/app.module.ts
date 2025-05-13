@@ -22,8 +22,6 @@ import { TelemetryGateway } from './websocket/gateways/telemetry.gateway'; // �
       database: process.env.DB_NAME || 'patrion',
       autoLoadEntities: true,
       synchronize: true,
-      ssl:
-        process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false, // ✅ EKLENDİ
     }),
     UsersModule,
     AuthModule,
@@ -31,7 +29,7 @@ import { TelemetryGateway } from './websocket/gateways/telemetry.gateway'; // �
     MqttModule,
   ],
   controllers: [ProfileController],
-  providers: [TelemetryGateway], // ✅ EKLENDİ
+  providers: [TelemetryGateway], // ✅ EKLEN Dİ
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
